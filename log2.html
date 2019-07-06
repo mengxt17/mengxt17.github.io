@@ -65,22 +65,14 @@
             max-width: 1080px;
             margin: 0 auto;
             float: left;
-            margin-left: 25%;
+            margin-left: 30%;
         }
 
-        .left {
-            height: 1000px;
-            width: 340px;
-            float: left;
-            background: rgb(17, 1, 51);
-            background: linear-gradient(to top right, rgb(89, 39, 196), rgb(6, 3, 32));
-            border: 15px solid rgb(6, 3, 32);
-            box-sizing: border-box;
-        }
+
 
         .right {
             height: 1000px;
-            width: 648px;
+            width: 800px;
             float: left;
             background: rgb(222, 228, 210);
             background: linear-gradient(to top left, rgb(126, 131, 116), rgb(255, 255, 255));
@@ -119,28 +111,21 @@
             margin-right: 10px;
             margin-top: 50px;
             /*background: rgb(245, 245, 245);*/
-            font: 60px Georgia, "Times New Roman", Times, serif;
+            font: 40px Georgia, "Times New Roman", Times, serif;
             color: rgb(36, 33, 33);
             text-shadow: 1px 1px 1px #FFF;
             /*border: 1px solid #E4E4E4;*/
         }
 
-        .right>a {
-            margin-left: 40px;
-            margin-right: 10px;
-            margin-top: 50px;
-            /*background: rgb(245, 245, 245);*/
-            font: 40px Georgia, "Times New Roman", Times, serif;
-            color: rgb(36, 33, 33);
-            text-shadow: 1px 1px 1px #FFF;
-            text-decoration: none;
+        .date{
+            margin-left: 350px;
         }
 
-        .abstract>p {
-            margin-left: 40px;
+        .logcontent>p {
+            margin-left: 60px;
             margin-right: 80px;
             padding: 20px 20px 20px 20px;
-            font: 20px Arial, Helvetica, sans-serif;
+            font: 25px Arial, Helvetica, sans-serif;
             color: rgb(44, 44, 44);
         }
     </style>
@@ -157,27 +142,18 @@
     </div>
     <div class="content">
         <div class="content_body">
-            <div class="left">
-                <div class="photo" style="background-image: url(./ext/photo.jpg)"></div>
-                <div class="infomation">
-                    <p>姓名：<br>&nbsp&nbsp&nbsp孟祥同</p>
-                    <p>微信：<br>&nbsp&nbsp&nbspm1076351686<p>
-                            <p>邮箱：<br>&nbsp&nbsp&nbspmengxt17@163.com<p>
-                                    <p>个人介绍：<br>&nbsp&nbsp&nbsp初学前端的萌新，希望能够通过小学期学到更多有趣、实用的前端知识。</p>
-                </div>
-            </div>
+
             <div class="right">
-                <div class="log"> 日志 <br> —————————</div>
-                <a href="./log.html"> <br>&nbsp&nbsp&nbsp&nbsp课程理解与期望 </a>
-                <div class="abstract">
-                    <p>&nbsp&nbsp&nbsp&nbsp随着技术的不断进步，前端的范畴已经不再像过去那样仅仅是一个页面的设计，它面向的范围更加广泛……</p>
-                </div>
-                <a href="./log2.html"> <br>&nbsp&nbsp&nbsp&nbsp实验二总结：运算符定义思路 </a>
-                <div class="abstract">
-                    <p>&nbsp&nbsp&nbsp&nbsp本次练习题目中第四题相当对难度较大，运算符定义这道题目可以利用数据结构中学习过的栈进行解决…… </p>
+                <div class="log"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp实验二总结：运算符定义思路 <br> —————————————</div>
+                <div class="date">2019-07-06 </div>
+                <div class="logcontent">
+                    <p>&nbsp&nbsp&nbsp&nbsp本次练习题目中第四题相当对难度较大，运算符定义这道题目可以利用数据结构中学习过的栈进行解决。基本思路是将原本的中缀表达式利用栈结构转变为后缀表达式，以此得到正确的计算顺序，再通过后缀表达式计算得到结果。
+                        <br>&nbsp&nbsp&nbsp&nbsp中缀表达式转后缀表达式：遍历中缀表达式，遇到数字时将其添加至后缀表达式中（由于输入是字符串所以在遍历时要稍做工作将整个数字提取出来），遇到运算符&时，将栈顶所有的&以此弹出加入后缀表达式，再将此运算符入栈；遇到左括号时将左括号入栈；遇到右括号时，一直出栈至栈顶为左括号，将出栈元素都加入后缀表达式中。遍历结束后就可以得到此表达式的后缀表达形式。
+                        <br>&nbsp&nbsp&nbsp&nbsp后缀表达式的计算：遇到运算符就根据定义的运算将运算符前面两个参数进行相应运算，两个参数和运算符从表达式中删除替换为运算结果，直至表达式中只剩下一个数字。
+                        <br>&nbsp&nbsp&nbsp&nbsp在解题的过程中我也能够体会到动态语言的一些好处，在声明变量时（例如栈时）不需要具体考虑其数据类型，如果使用C语言或C++进行实现可能要更加复杂，考虑情况时要更加仔细。
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
