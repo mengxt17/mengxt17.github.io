@@ -65,22 +65,14 @@
             max-width: 1080px;
             margin: 0 auto;
             float: left;
-            margin-left: 25%;
+            margin-left: 30%;
         }
 
-        .left {
-            height: 1000px;
-            width: 340px;
-            float: left;
-            background: rgb(17, 1, 51);
-            background: linear-gradient(to top right, rgb(89, 39, 196), rgb(6, 3, 32));
-            border: 15px solid rgb(6, 3, 32);
-            box-sizing: border-box;
-        }
+
 
         .right {
             height: 1000px;
-            width: 648px;
+            width: 800px;
             float: left;
             background: rgb(222, 228, 210);
             background: linear-gradient(to top left, rgb(126, 131, 116), rgb(255, 255, 255));
@@ -125,22 +117,15 @@
             /*border: 1px solid #E4E4E4;*/
         }
 
-        .right>a {
-            margin-left: 40px;
-            margin-right: 10px;
-            margin-top: 50px;
-            /*background: rgb(245, 245, 245);*/
-            font: 40px Georgia, "Times New Roman", Times, serif;
-            color: rgb(36, 33, 33);
-            text-shadow: 1px 1px 1px #FFF;
-            text-decoration: none;
+        .date{
+            margin-left: 350px;
         }
 
-        .abstract>p {
-            margin-left: 40px;
+        .logcontent>p {
+            margin-left: 60px;
             margin-right: 80px;
             padding: 20px 20px 20px 20px;
-            font: 20px Arial, Helvetica, sans-serif;
+            font: 25px Arial, Helvetica, sans-serif;
             color: rgb(44, 44, 44);
         }
     </style>
@@ -157,31 +142,19 @@
     </div>
     <div class="content">
         <div class="content_body">
-            <div class="left">
-                <div class="photo" style="background-image: url(./ext/photo.jpg)"></div>
-                <div class="infomation">
-                    <p>姓名：<br>&nbsp&nbsp&nbsp孟祥同</p>
-                    <p>微信：<br>&nbsp&nbsp&nbspm1076351686<p>
-                            <p>邮箱：<br>&nbsp&nbsp&nbspmengxt17@163.com<p>
-                                    <p>个人介绍：<br>&nbsp&nbsp&nbsp初学前端的萌新，希望能够通过小学期学到更多有趣、实用的前端知识。</p>
-                </div>
-            </div>
+
             <div class="right">
-                <div class="log"> 日志 <br> —————————</div>
-                <a href="./log.html"> <br>&nbsp&nbsp&nbsp&nbsp课程理解与期望 </a>
-                <div class="abstract">
-                    <p>&nbsp&nbsp&nbsp&nbsp随着技术的不断进步，前端的范畴已经不再像过去那样仅仅是一个页面的设计，它面向的范围更加广泛……</p>
-                </div>
-                <a href="./log2.html"> <br>&nbsp&nbsp&nbsp&nbsp实验二总结：运算符定义思路 </a>
-                <div class="abstract">
-                    <p>&nbsp&nbsp&nbsp&nbsp本次练习题目中第四题相当对难度较大，运算符定义这道题目可以利用数据结构中学习过的栈进行解决…… </p>
-                </div>
-                <a href="./log3.html"> <br>&nbsp&nbsp&nbsp&nbsp实验四总结 </a>
-                <div class="abstract">
-                    <p>&nbsp&nbsp&nbsp&nbsp选用koa作为服务器的后端框架，koa提供了大量功能强大的中间件，其中就有能够实现静态文件服务的w…… </p>
+                <div class="log"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp实验四总结 <br> &nbsp&nbsp————————————</div>
+                <div class="date">2019-07-11 </div>
+                <div class="logcontent">
+                    <p>&nbsp&nbsp&nbsp&nbsp选用koa作为服务器的后端框架，koa提供了大量功能强大的中间件，其中就有能够实现静态文件服务的koa-static模块。
+                        引入koa-static模块后，我们将所需的静态文件（基础实验一中的html文件等）放入服务器的某一目录下，使用koa-static中间件将此目录路径作为其参数即可。                    
+                        <br>&nbsp&nbsp&nbsp&nbsp通过koa路由中间件koa-router可以实现对文档中要求的请求的处理。
+                        引入koa-router模块后，建立四个子路由，分别处理四种API请求。如果使用原生koa处理post请求，其参数的获取将会较为繁杂，所以使用koa-body中间件进行post请求的解析（注意不要使用koa-bodyParser，此中间件无法处理‘multipart/form-data’类型的post请求）。而get和delete请求的参数都由query的形式传递，所以获取较为简单。
+                        获得请求参数后，先进行hw-token的比对，如果校检成功，那么进行后续的操作（由于参数都为字符串的形式，所以再进行compute时应注意先将参数转为数字再运算，将得到的结果返回），将响应状态码设为200并返回期望的数据；如果比对失败那么直接将状态码设为403。
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
